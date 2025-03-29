@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>save and loded</title>
+</head>
+<body>
+    <h1>save and loded localStorage</h1>
+   <textarea name="" id="inputText" cols="42" rows="10" placeholder="Enter the text massage !"></textarea>
+   <br>
+   <button onclick="savemas()">save-mas</button>
+   <button onclick="lodedmas()">loded-mas</button>
+   <button onclick="clearmas()">clear-mas</button>
+
+
+</body>
+</html>
+
+<script>
+    
+    function savemas(){
+        inputText = document.getElementById("inputText").value.trim()
+        if(inputText==""){
+            alert("plase enter the massage")
+        }
+        else{
+            localStorage.setItem("usermas" , inputText)
+            alert("massage saved sucsefully !")
+        }
+
+        lodedmas()
+
+    }
+
+    function lodedmas(){
+        savemassage = localStorage.getItem("usermas")
+        if(savemassage){
+            document.getElementById("inputText").value=savemassage
+        }
+        else{
+            alert("not any massage saved ! ")
+        }
+    }
+
+    function clearmas(){
+        localStorage.removeItem("usermas");
+        document.getElementById("inputText").value=""
+        alert("massage was delet")
+    }
+    
+    
+
+
+</script>

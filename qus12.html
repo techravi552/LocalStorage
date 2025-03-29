@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+        .light-theme {
+            background-color: white;
+            color: black;
+        }
+
+        .dark-theme {
+            background-color: #222;
+            color: white;
+        }
+
+        .blue-theme {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dynamic  webpage three themes </h1>
+
+    <label for="themeSelect">Choose Theme:</label>
+    <select id="themeSelect" onchange="changeTheme()">
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+        <option value="blue">Blue</option>
+    </select>
+
+    <script>
+          function changeTheme() {
+            const selectedTheme = document.getElementById("themeSelect").value;
+
+            document.body.className = selectedTheme + "-theme";
+          }
+    </script>
+</body>
+</html>
